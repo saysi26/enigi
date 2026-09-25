@@ -3,183 +3,216 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>PROTOCOLLO // DUE</title>
+<title>🐶🌻 vs 🥊 — Il Duello</title>
 <style>
-:root{--bg:#080b12;--panel:#101621;--panel2:#151d2b;--line:#263245;--text:#e8edf5;--muted:#8793a8;--gold:#d8b45a;--red:#d45b61;--green:#62b889;--blue:#6489c9}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% 0,#182131 0,#080b12 45%);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
-.wrap{max-width:980px;margin:auto;padding:22px}.panel{background:#101621dd;border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:0 18px 70px #0008}
-.hero{min-height:80vh;display:grid;place-items:center;text-align:center}.heroInner{max-width:700px}
-.eyebrow{letter-spacing:5px;color:var(--gold);font-size:12px;font-weight:800}.logo{font-size:clamp(42px,8vw,78px);letter-spacing:10px;margin:15px 0 5px;font-weight:900}.sub{color:var(--muted);font-size:17px}
-input{width:100%;background:#080d15;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:13px;margin:7px 0;outline:none}
-button{background:var(--gold);color:#101318;border:0;border-radius:10px;padding:12px 17px;font-weight:800;cursor:pointer;margin:5px 3px}button.secondary{background:#202b3d;color:var(--text)}button.red{background:var(--red);color:white}button.blue{background:var(--blue);color:white}button:disabled{opacity:.4;cursor:not-allowed}
-.row{display:flex;gap:10px;flex-wrap:wrap}.row>*{flex:1}.hidden{display:none!important}.code{font-size:28px;letter-spacing:8px;padding:16px;background:#080d15;border:1px solid var(--line);border-radius:12px;margin:15px 0}
-.top{display:flex;justify-content:space-between;gap:15px;align-items:center}.tag{font-size:11px;letter-spacing:2px;color:var(--gold);font-weight:800}.muted{color:var(--muted)}.small{font-size:12px}
-.players{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0}.player{background:#0b111a;border:1px solid var(--line);padding:14px;border-radius:13px}.player.me{border-color:#75663d}
-.status{padding:8px 11px;border-radius:8px;background:#0b111a;color:var(--muted);display:inline-block}
-.progress{height:5px;background:#06090e;border-radius:99px;overflow:hidden;margin:18px 0}.bar{height:100%;background:var(--gold);width:0;transition:.4s}
-.scene{background:#0b111a;border:1px solid var(--line);border-radius:15px;padding:22px;margin-top:15px}.scene h2{margin-top:0}.story{font-size:17px;line-height:1.65}.clue{border-left:3px solid var(--gold);padding:10px 14px;background:#121a25;margin:15px 0;color:#cdd5e2}
-.option{display:block;width:100%;text-align:left;background:#141d2a;color:var(--text);border:1px solid #2b394e;padding:15px;border-radius:11px;margin:8px 0}.option:hover{border-color:var(--gold)}
-.secret{background:#1a1315;border:1px solid #573338;border-radius:12px;padding:15px;margin-top:15px}.secret b{color:#ed9a9e}.log{max-height:180px;overflow:auto;margin-top:18px;padding:12px;background:#070b11;border-radius:12px;color:#8793a8;font-size:13px}.log div{margin:4px 0}
-.good{color:var(--green)}.warn{color:#e2c36d}.bad{color:#ed8c93}.center{text-align:center}.big{font-size:58px}
-@media(max-width:650px){.wrap{padding:10px}.panel{padding:17px}.players{grid-template-columns:1fr}.top{align-items:flex-start}}
+*{box-sizing:border-box}
+body{margin:0;background:#0b1020;color:#f6f7fb;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
+button,input{font:inherit}
+.wrap{max-width:900px;margin:auto;padding:24px}
+.card{background:#151b31;border:1px solid #293252;border-radius:22px;padding:24px;box-shadow:0 20px 60px #0005}
+h1{font-size:clamp(28px,6vw,54px);margin:0 0 8px}
+h2{margin-top:0}.muted{color:#9fa9c5}
+.hero{text-align:center;padding:42px 20px}
+.badges{font-size:52px;margin:12px}
+input{width:100%;background:#0d1326;color:white;border:1px solid #36415f;border-radius:12px;padding:13px;margin:8px 0}
+button{border:0;border-radius:12px;padding:13px 18px;background:#ffd447;color:#151515;font-weight:800;cursor:pointer;margin:6px 4px}
+button.secondary{background:#27314f;color:white}
+button.danger{background:#ff6575;color:white}
+button:disabled{opacity:.45;cursor:not-allowed}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}.row>*{flex:1}
+.hidden{display:none!important}
+.code{font-size:30px;letter-spacing:7px;text-align:center;background:#0b1020;border-radius:14px;padding:16px;margin:14px 0}
+.players{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
+.player{padding:15px;border-radius:16px;background:#0d1326;border:1px solid #293252}
+.player.active{border-color:#ffd447;box-shadow:0 0 0 2px #ffd44733}
+.hearts{font-size:22px;letter-spacing:2px}
+.choice{font-size:42px;padding:18px;background:#0d1326;border:1px solid #33405e;border-radius:16px;flex:1}
+.choice:hover{transform:translateY(-2px)}
+#gameArea{margin-top:18px}
+.progress{height:8px;background:#080c18;border-radius:99px;overflow:hidden;margin:15px 0}.bar{height:100%;width:0;background:#ffd447;transition:.4s}
+.challenge{font-size:20px;line-height:1.5}
+.log{max-height:180px;overflow:auto;background:#0b1020;border-radius:14px;padding:12px;color:#b9c2da}
+.small{font-size:13px}
+.success{color:#7ef0a3}.warning{color:#ffd447}.error{color:#ff8794}
+@media(max-width:600px){.wrap{padding:12px}.card{padding:18px}.players{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <div class="wrap">
 
-<section id="lobby" class="panel hero">
-<div class="heroInner">
-<div class="eyebrow">PRIVATE PROTOCOL / 02</div>
-<div class="logo">DUE</div>
-<p class="sub">Un gioco a distanza costruito su fiducia, inganno e decisioni.</p>
-<p class="muted">Non dovete necessariamente collaborare. Non dovete necessariamente essere onesti.</p>
-<div id="createArea">
-<input id="name" maxlength="18" placeholder="Il tuo nome">
-<div class="row">
-<button onclick="createRoom()">CREA PARTITA</button>
-<button class="secondary" onclick="showJoin()">ENTRA</button>
-</div>
-<div id="joinArea" class="hidden"><input id="room" maxlength="8" placeholder="Codice partita"><button onclick="joinRoom()">CONNETTI</button></div>
-<p id="status" class="small muted"></p>
-</div>
-<div id="waiting" class="hidden">
-<p class="tag">SESSIONE CREATA</p><div class="code" id="roomOut"></div>
-<p class="muted">Invia il codice all'altra persona. Quando entra, inizierà il Protocollo.</p>
-</div>
-</div>
+<section id="lobby" class="card hero">
+  <div class="badges">🐶 🌻 🥊</div>
+  <h1>IL DUELLO</h1>
+  <p class="muted">Una caccia al tesoro a distanza. Indizi, quiz, trappole e prove idiote.</p>
+  <div id="setup">
+    <input id="name" maxlength="18" placeholder="Il tuo nome">
+    <div class="row">
+      <button onclick="createRoom()">CREA STANZA</button>
+      <button class="secondary" onclick="showJoin()">ENTRA IN UNA STANZA</button>
+    </div>
+    <div id="joinBox" class="hidden">
+      <input id="roomCode" maxlength="8" placeholder="Codice stanza">
+      <button onclick="joinRoom()">ENTRA</button>
+    </div>
+    <p id="status" class="muted small"></p>
+  </div>
+  <div id="waiting" class="hidden">
+    <h2>Stanza pronta.</h2>
+    <p>Mandale questo codice:</p>
+    <div class="code" id="roomCodeDisplay"></div>
+    <p class="muted">Quando entra, potete iniziare insieme.</p>
+  </div>
 </section>
 
 <section id="game" class="hidden">
-<div class="panel">
-<div class="top"><div><div class="tag">PROTOCOLLO // DUE</div><h1 id="phaseTitle">FASE 01</h1></div><div class="status" id="roomTag"></div></div>
-<div class="players" id="players"></div>
-<div class="progress"><div class="bar" id="bar"></div></div>
-<div id="scene"></div>
-<div class="log" id="log"></div>
-</div>
+  <div class="card">
+    <div class="row">
+      <div><h2>🐶🌻 IL DUELLO 🥊</h2><div class="muted" id="roundText"></div></div>
+      <div style="text-align:right"><span class="small">Stanza</span><div id="roomMini"></div></div>
+    </div>
+    <div class="players" id="players"></div>
+    <div class="progress"><div class="bar" id="bar"></div></div>
+    <div id="gameArea"></div>
+    <div class="log" id="log"></div>
+  </div>
 </section>
+
 </div>
 
 <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
 <script>
-let peer,conn,isHost=false,myName='',otherName='',room='';
-let state={phase:0,started:false,finished:false,answers:{},trust:{host:0,guest:0},score:{host:0,guest:0},flags:{host:[],guest:[]}};
-const phases=[
-{title:'IL PRIMO PATTO',kind:'choice',text:'Avete una sola chiave. Potete usarla subito per avanzare oppure conservarla. Se entrambi scegliete la stessa cosa, ottenete un vantaggio. Se scegliete diversamente, uno dei due può guadagnare qualcosa a spese dell’altro.',opts:['CONSERVA — +1 fiducia','USA — +1 punto','RUBA — se l’altro conserva, prendi il suo vantaggio']},
-{title:'L’INDIZIO DIVISO',kind:'split',text:'Ognuno riceve un frammento diverso. Per risolvere il codice completo dovete condividere ciò che vedete. Ma il gioco non vi obbliga a dire la verità.',host:'TU VEDI: 7 — 18 — 1',guest:'L’ALTRO VEDE: 19 — 15 — 12 — 5',answer:'GIRASOLE'},
-{title:'IL DOSSIER',kind:'quiz',text:'Uno dei due ha un’informazione privata. Può comunicarla, mentire oppure non dire nulla. Prima però entrambi devono risolvere questo: quale parola collega meglio un bassotto, un girasole e un guantone?',opts:['FORZA','ICONA','CAMPO','GIOCO'],answer:1},
-{title:'LA STANZA DEI DUE BOTTONI',kind:'choice',text:'Premere il pulsante verde dà +3 punti a entrambi. Premere quello rosso dà +6 a te e -2 all’altro. L’altro vede la stessa scelta. Potete parlarne, ma il sistema non controlla se mantenete la promessa.',opts:['🟢 COOPERA','🔴 TRADISCI','⚪ NON FARE NULLA']},
-{title:'IL MESSAGGIO NASCOSTO',kind:'split',text:'C’è un messaggio nascosto. I due frammenti devono essere ricomposti. Non serve conoscersi: serve osservare.',host:'FRAMMENTO A: B — A — S',guest:'FRAMMENTO B: S — O — T — T — O',answer:'BASSOTTO'},
-{title:'LA DECISIONE',kind:'choice',text:'Il prossimo indizio può essere aperto solo una volta. Se lo apri tu, ottieni +4 punti ma l’altro riceve un indizio falso. Se lo condividete, prendete +2 entrambi.',opts:['APRI DA SOLO','CONDIVIDI','TENTA IL BLUFF']},
-{title:'IL CODICE FINALE',kind:'final',text:'Usa gli indizi ottenuti durante il gioco. La password finale contiene una cosa che appartiene a lei e una che appartiene a te. Scrivila come DUE parole separate da uno spazio.',answer:'BASSOTTO BOXE'}
+let peer, conn, isHost=false, myName='', mySymbol='', opponentName='', opponentSymbol='';
+let room='', state=null, answered=false;
+
+const rounds=[
+ {type:'choice', title:'SCEGLI IL TUO ALLEATO', text:'Il tuo animale/oggetto ti accompagna nel duello. Scegli in fretta:', choices:['🐶 Bassotto','🌻 Girasole','🥊 Guantone'], answer:null},
+ {type:'quiz', title:'L’INDOVINELLO', text:'Più ne togli, più diventa grande. Che cos’è?', choices:['Un buco','Un palloncino','Un cane','Un pugno'], answer:0},
+ {type:'quiz', title:'LA TRAPPOLA', text:'Un pugile entra in un ring. Fa 3 passi avanti e 3 indietro. Quanti passi ha fatto?', choices:['3','6','9','Dipende dal ring'], answer:1},
+ {type:'code', title:'IL CODICE', text:'A=1, B=2, C=3... Decifra: 7 - 9 - 18 - 1 - 19 - 15 - 12 - 5', answerText:'GIRASOLE'},
+ {type:'quiz', title:'IL BASSOTTO BUGIARDO', text:'Un bassotto dice: “La frase che sto dicendo è falsa.” Se la frase è una normale frase del gioco, cosa succede?', choices:['È una frase paradossale','È sicuramente vera','È sicuramente falsa','Il bassotto perde una vita'], answer:0},
+ {type:'challenge', title:'PROVA IDIOTA', text:'Per superare la prova devi mandare all’altro un messaggio vocale di massimo 7 secondi dicendo: “Sono ufficialmente più intelligente di un bassotto”, con voce da telecronista di boxe. Quando hai finito, premi FATTO.', answer:null},
+ {type:'quiz', title:'ULTIMO INDIZIO', text:'Hai 3 fiammiferi. Devi ottenere esattamente 30 usando solo i numeri 10, 20 e 30, senza sommare due numeri.', choices:['Usa 30','10 × 3','20 + 10','Non si può'], answer:0}
 ];
 
-function el(id){return document.getElementById(id)}
+function setStatus(t,c='muted'){let e=document.getElementById('status');e.textContent=t;e.className=c+' small'}
 function esc(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
-function log(s){el('log').innerHTML+=`<div>${esc(s)}</div>`;el('log').scrollTop=el('log').scrollHeight}
-function me(){return isHost?'host':'guest'} function them(){return isHost?'guest':'host'}
-function send(x){if(conn?.open)conn.send(x)}
-function showJoin(){el('joinArea').classList.remove('hidden')}
+function addLog(s){let l=document.getElementById('log');l.innerHTML+=`<div>${esc(s)}</div>`;l.scrollTop=l.scrollHeight}
+function send(o){if(conn&&conn.open)conn.send(o)}
+function showJoin(){document.getElementById('joinBox').classList.remove('hidden')}
+
 function createRoom(){
- myName=el('name').value.trim()||'Giocatore 1';isHost=true;room=Math.random().toString(36).slice(2,8).toUpperCase();
- peer=new Peer('due-'+room);
- peer.on('open',()=>{el('createArea').classList.add('hidden');el('waiting').classList.remove('hidden');el('roomOut').textContent=room});
- peer.on('connection',c=>{conn=c;wire()});peer.on('error',e=>log('Errore: '+e.type));
+ myName=document.getElementById('name').value.trim()||'Giocatore 1'; isHost=true;
+ room=Math.random().toString(36).slice(2,8).toUpperCase();
+ peer=new Peer('duello-'+room);
+ peer.on('open',()=>{document.getElementById('setup').classList.add('hidden');document.getElementById('waiting').classList.remove('hidden');document.getElementById('roomCodeDisplay').textContent=room;setStatus('In attesa dell’altro giocatore…')});
+ peer.on('connection',c=>{conn=c; setupConn();});
+ peer.on('error',e=>setStatus('Errore di connessione: '+e.type,'error'));
 }
+
 function joinRoom(){
- myName=el('name').value.trim()||'Giocatore 2';room=el('room').value.trim().toUpperCase();if(!room)return;
- peer=new Peer();peer.on('open',()=>{conn=peer.connect('due-'+room,{reliable:true});wire()});
- peer.on('error',()=>el('status').textContent='Partita non trovata.');
+ myName=document.getElementById('name').value.trim()||'Giocatore 2';
+ room=document.getElementById('roomCode').value.trim().toUpperCase();
+ if(!room)return;
+ peer=new Peer();
+ peer.on('open',()=>{conn=peer.connect('duello-'+room,{reliable:true});setupConn()});
+ peer.on('error',e=>setStatus('Codice non valido o stanza non disponibile.','error'));
 }
-function wire(){
- conn.on('open',()=>send({type:'hello',name:myName}));
- conn.on('data',msg=>{
-  if(msg.type==='hello'){otherName=msg.name;if(isHost){state.started=true;sync();openGame()}else{send({type:'ready'});openGame()}}
-  if(msg.type==='ready'&&isHost){state.started=true;sync();openGame()}
-  if(msg.type==='sync'){state=msg.state;otherName=msg.other||otherName;openGame();render()}
-  if(msg.type==='answer'){state.answers[msg.p]??={};state.answers[msg.p][msg.w]=msg.v;if(isHost)sync();render()}
-  if(msg.type==='advance'&&isHost){state.phase++;sync()}
-  if(msg.type==='finish'){state.finished=true;render()}
+
+function setupConn(){
+ conn.on('open',()=>{
+   send({type:'hello',name:myName});
+   if(isHost){state={round:0,answers:{},started:false,finished:false};setTimeout(()=>sendState(),300)}
  });
+ conn.on('data',handleData);
+ conn.on('close',()=>addLog('Connessione chiusa.'));
 }
-function sync(){send({type:'sync',state,other:otherName});render()}
-function openGame(){el('lobby').classList.add('hidden');el('game').classList.remove('hidden');render()}
-function answer(v){
- let p=state.phase;if(state.answers[p]?.[me()]!==undefined)return;
- state.answers[p]??={};state.answers[p][me()]=v;
- // Scoring/trust is deterministic and visible only after both have acted.
- if(isHost)sync();else send({type:'answer',p,w:me(),v});render();
+
+function handleData(m){
+ if(m.type==='hello'){
+   opponentName=m.name;
+   if(isHost){state.started=true;sendState();openGame();} else {send({type:'ready'});openGame();}
+ }
+ if(m.type==='ready'&&isHost){state.started=true;sendState();openGame();}
+ if(m.type==='state'){state=m.state;opponentName=m.opponentName||opponentName;openGame();render();}
+ if(m.type==='answer'){
+   state.answers[m.round]=state.answers[m.round]||{};
+   state.answers[m.round][m.who]=m.value;
+   if(isHost)sendState();
+   render();
+ }
+ if(m.type==='advance'&&isHost){state.round++;sendState();}
+ if(m.type==='chatlog')addLog(m.text);
 }
-function next(){
- if(!isHost)return;if(state.phase>=phases.length-1){state.finished=true;send({type:'finish'});render();return}
- state.phase++;sync();
-}
+
+function sendState(){send({type:'state',state,opponentName});render()}
+function openGame(){document.getElementById('lobby').classList.add('hidden');document.getElementById('game').classList.remove('hidden');render()}
+function myId(){return isHost?'host':'guest'}
+function otherId(){return isHost?'guest':'host'}
+
 function render(){
- if(!state.started)return;
- let p=phases[state.phase], a=state.answers[state.phase]||{}, mine=a[me()], theirs=a[them()];
- el('phaseTitle').textContent=`FASE ${String(state.phase+1).padStart(2,'0')} — ${p.title}`;
- el('roomTag').textContent=room;
- el('bar').style.width=(state.phase/phases.length*100)+'%';
- el('players').innerHTML=`
- <div class="player me"><b>TU</b><br>${esc(myName)}<br><span class="muted small">Punti: ${state.score[me()]||0} · Fiducia: ${state.trust[me()]||0}</span><br>${mine!==undefined?'<span class="good">DECISIONE REGISTRATA</span>':'<span class="muted">In attesa della tua scelta</span>'}</div>
- <div class="player"><b>ALTRA PERSONA</b><br>${esc(otherName||'…')}<br><span class="muted small">Punti: ${state.score[them()]||0} · Fiducia: ${state.trust[them()]||0}</span><br>${theirs!==undefined?'<span class="good">DECISIONE REGISTRATA</span>':'<span class="muted">Decisione segreta</span>'}</div>`;
- let h=`<div class="scene"><h2>${p.title}</h2><div class="story">${p.text}</div>`;
- if(p.kind==='split'){
-   h+=`<div class="clue"><b>IL TUO FRAMMENTO</b><br>${esc(isHost?p.host:p.guest)}</div>`;
-   h+=`<input id="ans" placeholder="Scrivi la soluzione"> <button onclick="textAnswer()">CONFERMA</button>`;
-   h+=`<div class="secret"><b>ATTENZIONE:</b> puoi mandare il tuo frammento all’altro oppure tenerlo segreto. Il gioco non ti obbliga a collaborare.</div>`;
-   h+=`<button class="secondary" onclick="shareClue()">CONDIVIDI IL MIO FRAMMENTO</button>`;
- }else if(p.kind==='quiz'||p.kind==='choice'){
-   p.opts.forEach((o,i)=>h+=`<button class="option" ${mine!==undefined?'disabled':''} onclick="answer(${i})">${esc(o)}</button>`);
- }else if(p.kind==='final'){
-   h+=`<input id="ans" placeholder="Password finale"><button onclick="textAnswer()">TENTA</button>`;
+ if(!state)return;
+ const r=Math.min(state.round,rounds.length-1), q=rounds[r];
+ document.getElementById('roomMini').textContent=room;
+ document.getElementById('roundText').textContent=`Prova ${r+1} / ${rounds.length}`;
+ document.getElementById('bar').style.width=((r)/rounds.length*100)+'%';
+ const myA=state.answers[r]?.[myId()], opA=state.answers[r]?.[otherId()];
+ document.getElementById('players').innerHTML=`
+ <div class="player ${myA!==undefined?'':'active'}"><b>Tu</b><br>${esc(myName)}<div class="hearts">❤️❤️❤️❤️❤️</div>${myA!==undefined?'<span class="success">✓ Risposta inviata</span>':''}</div>
+ <div class="player"><b>Avversario</b><br>${esc(opponentName||'in attesa…')}<div class="hearts">❤️❤️❤️❤️❤️</div>${opA!==undefined?'<span class="success">✓ Ha risposto</span>':''}</div>`;
+ if(state.finished){showFinish();return}
+ let h=`<h2>${q.title}</h2><div class="challenge">${q.text}</div>`;
+ if(q.type==='choice'||q.type==='quiz'){
+   h+='<div class="row" style="margin-top:18px">';
+   q.choices.forEach((x,i)=>h+=`<button class="choice" ${myA!==undefined?'disabled':''} onclick="answer(${i})">${esc(x)}</button>`);
+   h+='</div>';
  }
- if(mine!==undefined&&theirs===undefined)h+=`<p class="warn">La tua scelta è segreta. Aspetta.</p>`;
- if(mine!==undefined&&theirs!==undefined){
-   if(isHost)h+=`<hr style="border-color:#263245;border-width:1px 0 0;margin:20px 0"><button onclick="resolve()">RIVELA LE DECISIONI →</button>`;
-   else h+=`<p class="good">Entrambe le decisioni sono registrate. Il creatore può rivelarle.</p>`;
+ if(q.type==='code'){
+   h+=`<input id="codeInput" placeholder="Scrivi la parola decifrata" ${myA!==undefined?'disabled':''}>
+   <button ${myA!==undefined?'disabled':''} onclick="codeAnswer()">INVIA</button>`;
  }
- h+='</div>';el('scene').innerHTML=h;
+ if(q.type==='challenge'){
+   h+=`<button ${myA!==undefined?'disabled':''} onclick="answer('FATTO')">FATTO — HO COMPLETATO LA PROVA</button>`;
+ }
+ if(myA!==undefined&&opA===undefined)h+=`<p class="warning">Hai risposto. Aspetta l'avversario…</p>`;
+ if(myA!==undefined&&opA!==undefined){
+   if(isHost)h+=`<button onclick="nextRound()">CONTINUA →</button>`;
+   else h+=`<p class="success">Entrambi avete risposto. Il creatore della stanza avanza.</p>`;
+ }
+ document.getElementById('gameArea').innerHTML=h;
 }
-function textAnswer(){
- let v=(el('ans')?.value||'').trim().toUpperCase();
- let p=phases[state.phase];
- if(p.kind==='final'&&v!==p.answer){log('Password errata. Il protocollo resta bloccato.');return}
- if(p.kind==='split'&&v!==p.answer){log('Soluzione errata. Puoi riprovare.');return}
+
+function answer(v){
+ if(state.answers[state.round]?.[myId()]!==undefined)return;
+ state.answers[state.round]=state.answers[state.round]||{};
+ state.answers[state.round][myId()]=v;
+ if(isHost)sendState(); else send({type:'answer',round:state.round,who:myId(),value:v});
+ render();
+ checkRound();
+}
+function codeAnswer(){
+ let v=(document.getElementById('codeInput').value||'').trim().toUpperCase();
+ if(v!=='GIRASOLE'){addLog('❌ Codice errato. Riprova.');return}
  answer(v);
 }
-function shareClue(){
- let p=phases[state.phase];let clue=isHost?p.host:p.guest;
- send({type:'chatlog',text:`${myName} ha condiviso: ${clue}`});log('Hai condiviso il tuo frammento.');
+function checkRound(){
+ const a=state.answers[state.round];
+ if(a&&a[myId()]!==undefined&&a[otherId()]!==undefined)addLog('🔥 Entrambi avete completato la prova!');
 }
-function resolve(){
- let p=state.phase,a=state.answers[p]||{};let x=a.host,y=a.guest;
- if(x===undefined||y===undefined)return;
- // Resolve choices: cooperation vs betrayal.
- if(p===0){
-  if(x===0&&y===0){state.score.host+=1;state.score.guest+=1;state.trust.host++;state.trust.guest++}
-  else if(x===2&&y===0){state.score.host+=3;state.trust.guest--;state.flags.host.push('TRADITORE')}
-  else if(y===2&&x===0){state.score.guest+=3;state.trust.host--;state.flags.guest.push('TRADITORE')}
-  else {state.score.host++;state.score.guest++}
- }
- if(p===2){state.score.host++;state.score.guest++;if(x===1&&y===1){state.trust.host++;state.trust.guest++}}
- if(p===3){
-  const vals=['COOPERA','TRADISCI','NON']; let X=vals[x],Y=vals[y];
-  if(X==='COOPERA'&&Y==='COOPERA'){state.score.host+=3;state.score.guest+=3;state.trust.host++;state.trust.guest++}
-  else if(X==='TRADISCI'&&Y==='COOPERA'){state.score.host+=6;state.score.guest-=2;state.trust.host--;state.flags.host.push('TRADITORE')}
-  else if(Y==='TRADISCI'&&X==='COOPERA'){state.score.guest+=6;state.score.host-=2;state.trust.guest--;state.flags.guest.push('TRADITORE')}
-  else if(X==='TRADISCI'&&Y==='TRADISCI'){state.score.host+=1;state.score.guest+=1;state.trust.host--;state.trust.guest--}
-  else {state.score.host+=1;state.score.guest+=1}
- }
- if(p===5){
-  if(x===1&&y===1){state.score.host+=2;state.score.guest+=2;state.trust.host++;state.trust.guest++}
-  else if(x===0&&y!==0){state.score.host+=4;state.score.guest-=1;state.trust.host--;state.flags.host.push('BLUFF')}
-  else if(y===0&&x!==0){state.score.guest+=4;state.score.host-=1;state.trust.guest--;state.flags.guest.push('BLUFF')}
-  else {state.score.host+=1;state.score.guest+=1}
- }
- log(`FASE ${p+1} rivelata. Le decisioni non erano necessariamente le stesse.`);
- sync();
- setTimeout(()=>next(),600);
+function nextRound(){
+ if(!isHost)return;
+ if(state.round>=rounds.length-1){state.finished=true;sendState();return}
+ state.round++;sendState();
+}
+function showFinish(){
+ document.getElementById('bar').style.width='100%';
+ document.getElementById('gameArea').innerHTML=`
+ <div style="text-align:center">
+ <div style="font-size:70px">🏆</div>
+ <h2>FINE DEL DUELLO</h2>
+ <p class="challenge">Adesso niente scuse: confrontate le risposte e decidete chi ha vinto.</p>
+ <p><b>Il vincitore può chiedere al perdente una richiesta ragionevole.</b></p>
+ <p class="muted">Regola ufficiale: niente richieste che mettano l'altro a disagio. Deve essere una cosa che entrambi accettate.</p>
+ </div>`;
 }
 </script>
 </body>
